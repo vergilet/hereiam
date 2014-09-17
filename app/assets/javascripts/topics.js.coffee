@@ -30,9 +30,8 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     pixelOffset: new google.maps.Size(-140, 0)
     boxStyle:
       width: "280px"
-     
 
-  @buildMap = (markers) ->
+@buildMap = (markers) ->
 	handler = Gmaps.build 'Google', { builders: { Marker: RichMarkerBuilder} } #dependency injection
 
 	#then standard use
