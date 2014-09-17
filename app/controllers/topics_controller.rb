@@ -6,8 +6,8 @@ class TopicsController < ApplicationController
   def index
     @topics = Topic.all
     @hash = Gmaps4rails.build_markers(@topics) do |topic, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
+      marker.lat topic.latitude
+      marker.lng topic.longitude
       marker.infowindow topic.title
     end
   end
