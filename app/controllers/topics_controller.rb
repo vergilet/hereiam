@@ -30,8 +30,7 @@ class TopicsController < ApplicationController
   # POST /topics.json
   def create
     @topic = Topic.new(topic_params)
-    puts request.location.latitude
-    puts request.location.longitude 
+
     respond_to do |format|
       if @topic.save
         format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
@@ -76,5 +75,8 @@ class TopicsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
       params.require(:topic).permit(:latitude, :longitude, :address, :description, :title)
+      params[:latitude] = request.location.latitude
+      params[:longitude] = request.location.longitude
+      params
     end
 end
