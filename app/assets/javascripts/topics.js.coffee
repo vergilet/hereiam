@@ -31,12 +31,13 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     boxStyle:
       width: "280px"
 
+@position = null
+
 @getLocation = ->
 	if navigator.geolocation
 			navigator.geolocation.getCurrentPosition ((position) ->
-			    pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-			    console.log(pos)
-			    return pos
+			    @position = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+			    return
 			), ->
 			    handleNoGeolocation true
 				return
