@@ -19,7 +19,9 @@ class TopicsController < ApplicationController
 
   # GET /topics/new
   def new
-    @topic = Topic.new
+    city = request.location.city
+    puts request.location
+    @topic = Topic.new()
   end
 
   # GET /topics/1/edit
