@@ -36,13 +36,27 @@
 <br>
 
 
-<%= link_to 'New Topic', new_topic_path %>
-
-
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 <script>
   getLocation();
   buildMap(<%=raw @hash.to_json %>);
+   function newMarker(){
+    $.ajax({
+      url: "#{new_topic_path}",
+      type: "POST",
+      data: {
+        position :position
+      },
+      success: function(){
+          console.log('added')
+      },
+      error: function (){
+        console.log('problems')
+      }
+    });
+  }
 </script>
+
+<%#= link_to 'New Topic', new_topic_path, params.merge{position: position} %>
