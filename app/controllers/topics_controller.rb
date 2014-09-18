@@ -77,6 +77,7 @@ class TopicsController < ApplicationController
       new_params = params.require(:topic).permit(:latitude, :longitude, :address, :description, :title)
       new_params[:latitude] = randomize_location(request.location.latitude)
       new_params[:longitude] = randomize_location(request.location.longitude)
+      puts new_params.inspect
       new_params
     end
 
