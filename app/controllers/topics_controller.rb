@@ -74,10 +74,10 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:latitude, :longitude, :address, :description, :title)
-      params[:latitude] = randomize_location(request.location.latitude)
-      params[:longitude] = randomize_location(request.location.longitude)
-      params
+      new_params = params.require(:topic).permit(:latitude, :longitude, :address, :description, :title)
+      new_params[:latitude] = randomize_location(request.location.latitude)
+      new_params[:longitude] = randomize_location(request.location.longitude)
+      new_params
     end
 
     def randomize_location location
