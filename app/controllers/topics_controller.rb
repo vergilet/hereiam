@@ -84,7 +84,7 @@ class TopicsController < ApplicationController
     def randomize_location location
       while true do 
         result = location.to_s[0..-3] + rand(00..99).to_s
-        puts results.inspect
+        puts result.inspect
         return result if range_limit(location, result)
       end 
     end
