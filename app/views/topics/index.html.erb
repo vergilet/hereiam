@@ -42,21 +42,23 @@
 <script>
   location = getLocation();
   buildMap(<%=raw @hash.to_json %>);
-   function newMarker(location){
-    $.ajax({
-      url: "/topics/new",
-      type: "GET",
-      data: {
-        position: location
-      },
-      success: function(){
-          console.log('added')
-      },
-      error: function (){
-        console.log('problems')
-      }
-    });
-  }
+
+  console.log(location)  
+  //  function newMarker(location){
+  //   $.ajax({
+  //     url: "/topics/new",
+  //     type: "GET",
+  //     data: {
+  //       position: location
+  //     },
+  //     success: function(){
+  //         console.log('added')
+  //     },
+  //     error: function (){
+  //       console.log('problems')
+  //     }
+  //   });
+  // }
 </script>
 
 <%#= link_to 'New Topic', new_topic_path, params.merge{position: position} %>
