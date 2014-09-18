@@ -88,7 +88,7 @@ class TopicsController < ApplicationController
     end
 
     def range_limit(location, result)
-      (location.to_f - result.to_f).abs <= 15
+      (location.to_f - result.to_f).abs <= 5
     end
 
 end
