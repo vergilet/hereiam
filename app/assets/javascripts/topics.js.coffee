@@ -31,21 +31,21 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     boxStyle:
       width: "280px"
 
-@buildMap = (markers) ->
+@getLocation = ->
 	if navigator.geolocation
-		navigator.geolocation.getCurrentPosition ((position) ->
-		    pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-		    console.log(pos)
-		    return
-		), ->
-		    handleNoGeolocation true
-			return
-	else
-	  	handleNoGeolocation false
-
+			navigator.geolocation.getCurrentPosition ((position) ->
+			    pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+			    console.log(pos)
+			    return
+			), ->
+			    handleNoGeolocation true
+				return
+		else
+		  	handleNoGeolocation false
+		  	
+@buildMap = (markers) ->
 	handler = Gmaps.build 'Google', { builders: { Marker: RichMarkerBuilder} } #dependency injection
 
-	#then standard use
 	handler.buildMap { provider: {}, internal: {id: 'map'} }, ->
 	  markers = handler.addMarkers(markers)
 	  handler.bounds.extendWith(markers)
