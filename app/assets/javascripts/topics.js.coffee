@@ -32,6 +32,17 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
       width: "280px"
 
 @buildMap = (markers) ->
+	if navigator.geolocation
+		navigator.geolocation.getCurrentPosition ((position) ->
+		    pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+		    console.log(pos)
+		    return
+		), ->
+		    handleNoGeolocation true
+			return
+	else
+	  	handleNoGeolocation false
+
 	handler = Gmaps.build 'Google', { builders: { Marker: RichMarkerBuilder} } #dependency injection
 
 	#then standard use
