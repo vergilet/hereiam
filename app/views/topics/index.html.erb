@@ -44,10 +44,10 @@
   buildMap(<%=raw @hash.to_json %>);
    function newMarker(){
     $.ajax({
-      url: "#{new_topic_path}",
+      url: <%= new_topic_path %>,
       type: "POST",
       data: {
-        position :position
+        position: position
       },
       success: function(){
           console.log('added')
