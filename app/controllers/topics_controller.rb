@@ -19,8 +19,6 @@ class TopicsController < ApplicationController
 
   # GET /topics/new
   def new
-    city = request.location.city
-    puts request.location
     @topic = Topic.new()
   end
 
@@ -32,7 +30,8 @@ class TopicsController < ApplicationController
   # POST /topics.json
   def create
     @topic = Topic.new(topic_params)
-
+    puts request.location.latitude
+    puts request.location.longitude 
     respond_to do |format|
       if @topic.save
         format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
