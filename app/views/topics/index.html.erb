@@ -44,7 +44,7 @@
   buildMap(<%=raw @hash.to_json %>);
    function newMarker(position){
     $.ajax({
-      url: <%= new_topic_path %>,
+      url: "#{new_topic_path}",
       type: "GET",
       data: {
         position: my_location
