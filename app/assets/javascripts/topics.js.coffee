@@ -36,10 +36,10 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 			navigator.geolocation.getCurrentPosition ((position) ->
 			    pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
 			    console.log(pos)
-			    return
+			    return pos
 			), ->
 			    handleNoGeolocation true
-				return
+				return pos
 		else
 		  	handleNoGeolocation false
 		  	

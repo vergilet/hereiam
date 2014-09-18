@@ -77,14 +77,12 @@ class TopicsController < ApplicationController
       new_params = params.require(:topic).permit(:latitude, :longitude, :address, :description, :title)
       new_params[:latitude] = randomize_location(request.location.latitude)
       new_params[:longitude] = randomize_location(request.location.longitude)
-      puts new_params.inspect
       new_params
     end
 
     def randomize_location location
       while true do 
         result = location.to_s[0..-3] + rand(00..99).to_s
-        puts result.inspect
         return result if range_limit(location, result)
       end 
     end
