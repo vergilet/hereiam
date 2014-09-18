@@ -40,14 +40,14 @@
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 <script>
-  getLocation();
+  location = getLocation();
   buildMap(<%=raw @hash.to_json %>);
-   function newMarker(position){
+   function newMarker(location){
     $.ajax({
       url: "/topics/new",
       type: "GET",
       data: {
-        position: my_location
+        position: location
       },
       success: function(){
           console.log('added')
