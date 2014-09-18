@@ -42,7 +42,7 @@
 <script>
   getLocation();
   buildMap(<%=raw @hash.to_json %>);
-   function newMarker(){
+   function newMarker(position){
     $.ajax({
       url: <%= new_topic_path %>,
       type: "POST",
