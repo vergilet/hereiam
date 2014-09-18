@@ -45,9 +45,9 @@
    function newMarker(position){
     $.ajax({
       url: <%= new_topic_path %>,
-      type: "POST",
+      type: "GET",
       data: {
-        position: position
+        position: my_location
       },
       success: function(){
           console.log('added')
