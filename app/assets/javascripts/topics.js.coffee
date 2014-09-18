@@ -39,7 +39,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 			    return pos
 			), ->
 			    handleNoGeolocation true
-				return pos
+				return
 		else
 		  	handleNoGeolocation false
 		  	
