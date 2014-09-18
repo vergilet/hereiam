@@ -37,14 +37,13 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 	my_location = null
 	if navigator.geolocation
 			navigator.geolocation.getCurrentPosition ((position) ->
-			    my_location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+			    pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
 			    return
 			), ->
 			    handleNoGeolocation true
 				return
-		else
-		  	handleNoGeolocation false
-    return my_location
+	else
+		handleNoGeolocation false
 		  	
 @buildMap = (markers) ->
 	handler = Gmaps.build 'Google', { builders: { Marker: RichMarkerBuilder} } #dependency injection
