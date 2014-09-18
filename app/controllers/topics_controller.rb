@@ -81,6 +81,14 @@ class TopicsController < ApplicationController
     end
 
     def randomize_location location
-      location.to_s[0..4] + rand(00..99).to_s
+      while true do 
+        result = location.to_s[0..4] + rand(00..99).to_s
+        return result if range_limit(location,result.to_f)
+      end 
     end
+
+    def range_limit location result
+      (location - result).abs <= 15
+    end
+
 end
