@@ -13,9 +13,9 @@ update = ->
       d = moment(m.created_at)
       $('#chat').append('<li>' +
       '<span class="created_at">' + d.format('hh:mm') + '</span>' +
-      m.content +
+      m.body +
       '</li>')
 
-    setTimeout update, 750 # polling at least every 750 ms but don't overlap between requests
+    setTimeout update, 750
 
-update()
+update
