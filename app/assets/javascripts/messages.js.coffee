@@ -5,9 +5,8 @@
 update = ->
   $.get 'messages.json', null, (data, status, jqXHR) ->
     msgsSorted = _.sortBy data, (message) ->
-      new Date(message.created_at).getTime() # get messages sorted by creation time ascending
+      new Date(message.created_at).getTime()
 
-    # refreshing messages list
     $('#chat').empty()
     for m in msgsSorted
       d = moment(m.created_at)
@@ -18,4 +17,4 @@ update = ->
 
     setTimeout update, 750
 
-update
+update()
