@@ -1,10 +1,10 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_filter :set_topic
 
   # GET /messages
   # GET /messages.json
   def index
+    @topic = Topic.find_by_id(params[:topic_id])
     @messages = Message.all
   end
 
@@ -63,10 +63,6 @@ class MessagesController < ApplicationController
   end
 
   private
-
-    def set_topic
-      @topic = Topic.find_by_id(params[:topic_id])
-    end
     # Use callbacks to share common setup or constraints between actions.
     def set_message
       @message = Message.find(params[:id])
@@ -74,11 +70,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:body, :topic_id, :user_id)
-      puts current_user.id
-      puts @topic.id
-      params.merge({message: {user_id: current_user.id, topic_id: @topic.id}})
-      puts params
-      params
+      params.require(:message).permit(:body, :user_id, :topic_id)
     end
 end
