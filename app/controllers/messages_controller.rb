@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
+    @topic = Topic.find_by_id(params[:topic_id])
     @messages = Message.all
   end
 
