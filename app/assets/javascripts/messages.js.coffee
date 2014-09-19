@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-@update = (topic_id) ->
+update = ->
   $.get 'messages.json', null, (data, status, jqXHR) ->
     msgsSorted = _.sortBy data, (message) ->
       new Date(message.created_at).getTime() # get messages sorted by creation time ascending
@@ -17,3 +17,5 @@
       '</li>')
 
     setTimeout update, 750 # polling at least every 750 ms but don't overlap between requests
+
+update
