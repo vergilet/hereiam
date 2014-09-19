@@ -48,9 +48,11 @@
     $.ajax({
         url: '/topics',
         data:{
-          latitude: current_location.lat(),
-          longitude: current_location.lng(),
-          title: 'New location'
+          topic: {
+            latitude: current_location.lat(),
+            longitude: current_location.lng(),
+            title: 'New location'
+          }
         },
         type: "POST",
         success: function () {
