@@ -44,21 +44,13 @@
   buildMap(<%=raw @hash.to_json %>);
 
 
-  function newTopic() {
-    latitude = null;
-    longitude = null;
-    title = null;
+  function newTopic(current_location) {
     $.ajax({
         url: '/topics',
-        beforeSend: function() {
-          latitude =  current_location.lat();
-          longitude =  current_location.lng();
-          title =  'New location';
-        },
         data:{
-          latitude: latitude,
-          longitude: longitude,
-          title: title
+          latitude: current_location.lat(),
+          longitude: current_location.lng(),
+          title: 'New location'
         },
         type: "POST",
         success: function () {
