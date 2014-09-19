@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 @update = (topic_id) ->
-  $.get 'topic/' + topic_id + '/messages.json', null, (data, status, jqXHR) ->
+  $.get 'messages.json', null, (data, status, jqXHR) ->
     msgsSorted = _.sortBy data, (message) ->
       new Date(message.created_at).getTime() # get messages sorted by creation time ascending
 
