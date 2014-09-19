@@ -41,7 +41,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     ), ->
       handleNoGeolocation true
 
-    if current_location is {}
+    if jQuery.isEmptyObject(current_location)
       current_location =
         lat: ->
           null
