@@ -43,16 +43,23 @@
   current_location = getLocation();
   buildMap(<%=raw @hash.to_json %>);
 
-  data = {
-    latitude: current_location.lat(),
-    longitude: current_location.lng(),
-    title: 'New location'
-  }
 
   function newTopic() {
+    latitude = null;
+    longitude = null;
+    title = null;
     $.ajax({
         url: '/topics',
-        data: data,
+        beforeSend: function() {
+          latitude =  current_location.lat();
+          longitude =  current_location.lng(),;
+          title =  'New location';
+        },
+        data:{
+          latitude: latitude,
+          longitude: longitude,
+          title: title
+        },
         type: "POST",
         success: function () {
           console.log('ok');
