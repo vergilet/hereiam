@@ -43,15 +43,16 @@
   getLocation();
   buildMap(<%=raw @hash.to_json %>);
 
+  data = {
+    latitude: current_location.lat(),
+    longitude: current_location.lng()
+  }
 
   function newTopic() {
     $.ajax({
         url: '/topics/new',
         beforeSend: function() {
-          data = {
-            latitude: current_location.lat(),
-            longitude: current_location.lng()
-          }
+          
         },
         data: data
     });
