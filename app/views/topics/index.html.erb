@@ -46,11 +46,12 @@
   data = {
     latitude: current_location.lat(),
     longitude: current_location.lng()
+    title: 'New location'
   }
 
   function newTopic() {
     $.ajax({
-        url: '/topics/new',
+        url: '/topics',
         data: data,
         type: "POST",
         success: function () {
