@@ -1,10 +1,10 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_filter :set_topic
 
   # GET /messages
   # GET /messages.json
   def index
-    @topic = Topic.find_by_id(params[:topic_id])
     @messages = Message.all
   end
 
@@ -63,6 +63,10 @@ class MessagesController < ApplicationController
   end
 
   private
+
+    def set_topic
+      @topic = Topic.find_by_id(params[:topic_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_message
       @message = Message.find(params[:id])
