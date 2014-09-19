@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :messages
+  
 
-  resources :topics
+  resources :topics do
+  	resources :messages	
+  end	
 
   resources :users
   root to: 'visitors#index'
