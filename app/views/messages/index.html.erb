@@ -5,7 +5,7 @@
     <%= render @messages %>
   </ul>
 
-  <%= form_for Message.new(topic_id: params[:topic_id]), remote: true do |f| %>
+  <%= form_for, Message.new, url: topic_messages_path(@topic),  remote: true do |f| %>
       <%= f.text_field :body %>
       <%= f.submit "Send" %>
   <% end %>
