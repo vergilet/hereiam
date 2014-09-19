@@ -42,6 +42,22 @@
 <script>
   getLocation();
   buildMap(<%=raw @hash.to_json %>);
+
+
+  function newTopic() {
+    $.ajax({
+        url: '/topics/new',
+        beforeSend: function() {
+          lat = my_location.lat();
+          lng = my_location.lng();
+        },
+        data: {
+          lat: lat,
+          lng = lng
+        }
+    });
+  }
+
 </script>
 
 <%= link_to 'New Topic', new_topic_path %>
