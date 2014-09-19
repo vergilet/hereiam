@@ -51,7 +51,14 @@
   function newTopic() {
     $.ajax({
         url: '/topics/new',
-        data: data
+        data: data,
+        type: "POST"
+        success: function () {
+          console.log('ok');
+        },
+        error: function() {
+          console.log('oops')
+        }
     });
   }
 
