@@ -81,7 +81,7 @@ class TopicsController < ApplicationController
     end
 
     def randomize_location location
-       result = location.to_s[0..-2] + rand(0..9).to_s
+       result = location.to_s[0..-3] + rand(0..99).to_s
        result
     end
 
