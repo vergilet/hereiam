@@ -40,7 +40,7 @@
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 <script>
-  getLocation();
+  current_location = getLocation();
   buildMap(<%=raw @hash.to_json %>);
 
   data = {
@@ -51,9 +51,6 @@
   function newTopic() {
     $.ajax({
         url: '/topics/new',
-        beforeSend: function() {
-          
-        },
         data: data
     });
   }
