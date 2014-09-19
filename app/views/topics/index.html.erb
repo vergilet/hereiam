@@ -40,6 +40,7 @@
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 <script>
+  getLocation();
   buildMap(<%=raw @hash.to_json %>);
 
 
@@ -47,13 +48,9 @@
     $.ajax({
         url: '/topics/new',
         beforeSend: function() {
-          getLocation();
-          lat = my_location.lat();
-          lng = my_location.lng();
+
         },
         data: {
-          lat: lat,
-          lng = lng
         }
     });
   }
