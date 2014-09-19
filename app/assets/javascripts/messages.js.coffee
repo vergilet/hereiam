@@ -18,4 +18,4 @@ update = ->
 
     setTimeout update, 750 # polling at least every 750 ms but don't overlap between requests
 
-update
+update()
