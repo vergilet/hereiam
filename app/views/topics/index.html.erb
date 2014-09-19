@@ -48,9 +48,12 @@
     $.ajax({
         url: '/topics/new',
         beforeSend: function() {
-
+          var longitude = current_location.lng();
+          var latitude = current_location.lat();
         },
         data: {
+          latitude: latitude,
+          longitude: longitude
         }
     });
   }
