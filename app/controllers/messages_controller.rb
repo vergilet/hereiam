@@ -71,6 +71,8 @@ class MessagesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
       params.require(:message).permit(:body)
-      params.merge({message: {user_id: current_user.id, topic_id: params[:topic_id]}})
+      params.merge({message: {user_id: current_user.id, topic_id: @topic.id}})
+      puts params
+      params
     end
 end
