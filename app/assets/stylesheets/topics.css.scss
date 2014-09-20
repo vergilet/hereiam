@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#map div {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
 
 .marker_container {
 	border: 1px solid black;
