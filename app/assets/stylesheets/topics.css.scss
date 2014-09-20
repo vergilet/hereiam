@@ -2,10 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#map div {
-	-webkit-box-shadow: none!important;
-	box-shadow: none!important;
-}
+
 /*
 .marker_container {
 	border: 1px solid black;
@@ -30,9 +27,8 @@
   left: 50%;
   top: 50%;
   margin: -20px 0 0 -20px;
-
--webkit-box-shadow: rgba(88, 88, 88, 0.701961) 7px -3px 5px!important;
-box-shadow: rgba(88, 88, 88, 0.701961) 7px -3px 5px!important;
+  -webkit-box-shadow: rgba(88, 88, 88, 0.701961) 7px -3px 5px!important;
+  box-shadow: rgba(88, 88, 88, 0.701961) 7px -3px 5px!important;
 
 }
 .marker_container:after {
@@ -44,4 +40,8 @@ box-shadow: rgba(88, 88, 88, 0.701961) 7px -3px 5px!important;
   border: 1px solid #00caff;
   position: absolute;
   border-radius: 50%;
+}
+#map div {
+	-webkit-box-shadow: none!important;
+	box-shadow: none!important;
 }
