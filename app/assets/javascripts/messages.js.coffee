@@ -6,7 +6,6 @@
   update(topic_id)
 
 update = (topic_id) ->
-  $('.chat-container [type=submit]').attr('disabled', 'disabled')
   $.get '/topics/' + topic_id + '/messages.json', null, (data, status, jqXHR) ->
     msgsSorted = _.sortBy data, (message) ->
       new Date(message.created_at).getTime()
