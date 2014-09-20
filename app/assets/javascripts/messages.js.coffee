@@ -3,10 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 @callUpdate = (topic_id) ->
-  update(topic_id)
+  @topic_id = topic_id
+  update()
 
-update = (topic_id) ->
-  $.get '/topics/' + topic_id + '/messages.json', null, (data, status, jqXHR) ->
+update = ->
+  $.get '/topics/' + @topic_id + '/messages.json', null, (data, status, jqXHR) ->
     msgsSorted = _.sortBy data, (message) ->
       new Date(message.created_at).getTime()
 
