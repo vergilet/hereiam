@@ -12,6 +12,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     marker = document.createElement("div")
     marker.setAttribute 'class', 'marker_container'
     marker.innerHTML = @args.title
+    console.log(@args)
     { content: marker }
 
 
