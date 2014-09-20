@@ -16,4 +16,4 @@
       m.body +
       '</li>')
 
-    setTimeout @update(topic_id), 750
+    setTimeout update(topic_id), 750
