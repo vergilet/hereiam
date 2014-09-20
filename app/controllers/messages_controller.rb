@@ -66,7 +66,7 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:body, :user_id, :topic_id)
       new_params = params[:message][:user_id] = current_user.id
-      new_params = params[:message][:topic_id] = .id
+      new_params = params[:message][:topic_id] = @topic.id
 
     end
 end
