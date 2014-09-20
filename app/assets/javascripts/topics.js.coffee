@@ -20,6 +20,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     boxText = document.createElement("div")
     boxText.setAttribute("class", 'yellow') #to customize
     boxText.innerHTML = @args.infowindow
+    console.log(@args)
     @infowindow = new InfoBox(@infobox(boxText))
 
     # add @bind_infowindow() for < 2.1
