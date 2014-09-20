@@ -8,7 +8,9 @@
 	background-color: yellow;
 	padding: 5px; 
 }
-.marker_container {
+
+
+.main_point {
   width: 30px;
   height: 30px;
   border-radius: 50% 50% 50% 0%;
@@ -25,13 +27,54 @@
    box-shadow:         3px 1px 5px 2px rgba(50, 50, 50, 0.4);
 
 }
-.marker_container:after {
-  content: "";
-  width: 22px;
-  height: 22px;
-  margin: 4px 0px 0px 4px;
-  background: white;
-  border: 1px solid #00caff;
+.main_point:after {
+	content: "";
+	width: 26px;
+	height: 26px;
+	margin: 2px 0px 0px 2px;
+	background: white;
+	border: 1px solid #00caff;
+	position: absolute;
+	border-radius: 50%;
+	background-image: url('');
+	background-size: 90%;
+	background-repeat: no-repeat;
+	-webkit-transition: rotate(-45deg);
+	-webkit-transform: rotate(45deg);
+	background-position: 1px 5px;
+}
+
+
+.bike_point {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0%;
+  background: #00e9ca;
   position: absolute;
-  border-radius: 50%;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -30px 0 0 -30px;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 1px 5px 2px rgba(50, 50, 50, 0.4);
+   -moz-box-shadow:   3px 1px 5px 2px rgba(50, 50, 50, 0.4);
+   box-shadow:         3px 1px 5px 2px rgba(50, 50, 50, 0.4);
+
+}
+.bike_point:after {
+	content: "";
+	width: 26px;
+	height: 26px;
+	margin: 2px 0px 0px 2px;
+	background: white;
+	border: 1px solid #00caff;
+	position: absolute;
+	border-radius: 50%;
+	background-image: url('http://www.wpclipart.com/recreation/cycling/bicycles/plain_bicycle_icon_large.png');
+	background-size: 90%;
+	background-repeat: no-repeat;
+	-webkit-transition: rotate(-45deg);
+	-webkit-transform: rotate(45deg);
+	background-position: 1px 5px;
 }
