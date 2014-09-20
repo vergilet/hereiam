@@ -18,4 +18,4 @@ update = (topic_id) ->
       m.body +
       '</li>')
 
-    setTimeout update(topic_id), 750
+    setTimeout update, 750
