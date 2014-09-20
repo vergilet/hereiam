@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-update = (topic_id) ->
+@update = (topic_id) ->
   $('.chat-container [type=submit]').attr('disabled', 'disabled')
   $.get '/topic/' + topic_id + '/messages.json', null, (data, status, jqXHR) ->
     msgsSorted = _.sortBy data, (message) ->
@@ -16,4 +16,4 @@ update = (topic_id) ->
       m.body +
       '</li>')
 
-    setTimeout update(topic_id), 750
+    setTimeout @update(topic_id), 750
