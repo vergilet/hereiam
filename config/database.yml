@@ -4,7 +4,7 @@ development:
   database: hereiam_dev
   pool: 5
   username: root
-  password:
+  password: 6637515
 
 production:
   adapter: mysql2
@@ -12,4 +12,4 @@ production:
   database: hereiam_prod
   pool: 5
   username: root
-  password:
+  password: 6637515
