@@ -10,6 +10,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 
   rich_marker_options: ->
     marker = document.createElement("div")
+    console.log(@args)
     marker.setAttribute 'class', @args.title
     { content: marker }
 
