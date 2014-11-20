@@ -9,6 +9,7 @@ class TopicsController < ApplicationController
       marker.lat topic.latitude
       marker.lng topic.longitude
       marker.infowindow topic.description
+      marker.type topic.title
     end
   end
 
