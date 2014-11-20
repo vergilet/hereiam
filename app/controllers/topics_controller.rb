@@ -8,8 +8,8 @@ class TopicsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@topics) do |topic, marker|
       marker.lat topic.latitude
       marker.lng topic.longitude
-      marker.infowindow topic.description
-      marker.title topic.title
+      marker.infowindow topic.title
+      marker.title topic.description
     end
   end
 

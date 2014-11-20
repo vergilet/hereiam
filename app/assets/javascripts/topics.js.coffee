@@ -15,11 +15,11 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 
 
   create_infowindow: ->
-    return null unless _.isString @args.infowindow
+    return null unless _.isString @args.description
 
     boxText = document.createElement("div")
     boxText.setAttribute("class", 'yellow') #to customize
-    boxText.innerHTML = @args.infowindow
+    boxText.innerHTML = @args.description
     console.log(@args)
     @infowindow = new InfoBox(@infobox(boxText))
 
