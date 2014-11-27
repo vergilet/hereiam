@@ -41,6 +41,7 @@
 </div>
 <script>
   current_location = getLocation();
+  console.log(<%=raw @hash.to_json %>);
   buildMap(<%=raw @hash.to_json %>);
 
 
