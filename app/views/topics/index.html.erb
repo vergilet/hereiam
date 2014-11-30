@@ -65,7 +65,7 @@
       type: "POST",
       success: function (data) {
         markers = handler.addMarkers(data)
-        handler.bounds.extendWith(data)
+        handler.bounds.extendWith(markers)
       },
       error: function() {
         console.log('oops')
