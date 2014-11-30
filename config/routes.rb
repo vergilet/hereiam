@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
 
   resources :topics do
-    post :my_location
+    collection do
+      post :my_location
+    end
   	resources :messages
   end
 
