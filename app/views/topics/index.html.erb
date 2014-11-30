@@ -41,14 +41,7 @@
 </div>
 <script>
   current_location = getLocation();
-  buildMap(<%=raw [].to_json %>);
-
-
-  var me_marker = [
-    { lat: current_location.lat(), lng: current_location.lng(), infowindow: "dsd", marker_title: "bike_point" }
-  ];
-
-
+  buildMap(<%=raw nil.to_json %>);
 
 
   function loadNearPlaces(point) {
