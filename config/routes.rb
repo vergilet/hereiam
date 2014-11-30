@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  
+
 
   resources :topics do
-  	resources :messages	
-  end	
+    post 'my_location'
+  	resources :messages
+  end
 
   resources :users
   root to: 'visitors#index'
