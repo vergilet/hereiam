@@ -64,8 +64,9 @@
       },
       type: "POST",
       success: function (data) {
-        console.log(data);
         handler.addMarkers(data);
+        handler.bounds.extendWith(data)
+        handler.fitMapToBounds()
       },
       error: function() {
         console.log('oops')
