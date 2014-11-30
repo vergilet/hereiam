@@ -41,7 +41,7 @@
 </div>
 <script>
   current_location = getLocation();
-  buildMap(<%=raw nil.to_json %>);
+  buildMap(<%=raw @hash.to_json %>);
 
 
   var me_marker = [
