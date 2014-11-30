@@ -60,7 +60,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
   @current_location
 
 @buildMap = (markers) ->
-  var markers = markers || []
+  markers = markers || []
 	@handler = Gmaps.build 'Google', { builders: { Marker: RichMarkerBuilder} } #dependency injection
 
 	handler.buildMap { provider: {
