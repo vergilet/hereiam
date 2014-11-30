@@ -41,9 +41,37 @@
 </div>
 <script>
   current_location = getLocation();
-  console.log(<%=raw @hash.to_json %>);
   buildMap(<%=raw @hash.to_json %>);
 
+
+  var me_marker = [
+    { lat: current_location.lat(), lng: current_location.lng(), infowindow: "dsd", marker_title: "bike_point" }
+  ];
+
+  var markers = handler.addMarkers(me_marker);
+
+
+  function loadNearPlaces(point) {
+    $.ajax({
+      dataType: 'JSON',
+      url: '/my_location',
+      data:{
+        my_location: {
+          latitude: point.lat(),
+          longitude: point.lng(),
+          range: 20
+        }
+      },
+      type: "POST",
+      success: function (data) {
+        console.log(data);
+        handler.addMarkers(data);
+      },
+      error: function() {
+        console.log('oops')
+      }
+    });
+  }
 
   function newTopic(current_location) {
     $.ajax({
