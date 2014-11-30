@@ -64,11 +64,8 @@
       },
       type: "POST",
       success: function (data) {
-        handler.addMarkers(data);
-        console.log(data);
-        zed = data;
+        markers = handler.addMarkers(data)
         handler.bounds.extendWith(data)
-        handler.fitMapToBounds()
       },
       error: function() {
         console.log('oops')
