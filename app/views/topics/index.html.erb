@@ -65,6 +65,8 @@
       type: "POST",
       success: function (data) {
         handler.addMarkers(data);
+        console.log(data);
+        zed = data;
         handler.bounds.extendWith(data)
         handler.fitMapToBounds()
       },
