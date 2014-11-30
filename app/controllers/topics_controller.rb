@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
     return if coordinates.blank?
     @near_topics = Topic.near(
       [coordinates['latitude'], coordinates['longitude']],
-      coordinates.range,
+      coordinates['range'],
       :units => :km
     )
     render json: @near_topics
