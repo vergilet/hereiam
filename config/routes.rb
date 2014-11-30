@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :topics do
     collection do
-      post :my_location
+      post 'my_location'
     end
   	resources :messages
   end
