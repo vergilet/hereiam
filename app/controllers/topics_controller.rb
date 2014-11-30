@@ -17,7 +17,7 @@ class TopicsController < ApplicationController
     coordinates = params[:my_location]
     return if coordinates.blank?
     @near_topics = Topic.near(
-      [coordinates.latitude, coordinates.longitude],
+      [coordinates['latitude'], coordinates['longitude']],
       coordinates.range,
       :units => :km
     )
