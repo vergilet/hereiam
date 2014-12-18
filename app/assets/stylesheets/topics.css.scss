@@ -1,0 +1,96 @@
+// Place all the styles related to the Topics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.yellow {
+	border: 1px solid black;
+	background-color: yellow;
+	padding: 5px;
+}
+
+.black {
+	border:2px solid black;
+	margin-top: 8px;
+	background:#333;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding: .5em 1em;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	text-shadow:0 -1px #000000;
+	-webkit-box-shadow: 0 0  8px #000;
+	box-shadow: 0 0 8px #000;
+}
+
+
+.main_point {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0%;
+  background: #00cae9;
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -30px 0 0 -30px;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 1px 5px 2px rgba(50, 50, 50, 0.4);
+   -moz-box-shadow:   3px 1px 5px 2px rgba(50, 50, 50, 0.4);
+   box-shadow:         3px 1px 5px 2px rgba(50, 50, 50, 0.4);
+
+}
+.main_point:after {
+	content: "";
+	width: 26px;
+	height: 26px;
+	margin: 2px 0px 0px 2px;
+	background: white;
+	border: 1px solid #00caff;
+	position: absolute;
+	border-radius: 50%;
+	background-image: url('');
+	background-size: 90%;
+	background-repeat: no-repeat;
+	-webkit-transition: rotate(-45deg);
+	-webkit-transform: rotate(45deg);
+	background-position: 1px 5px;
+}
+
+
+.bike_point {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0%;
+  background: #00e9ca;
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -30px 0 0 -30px;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 1px 5px 2px rgba(50, 50, 50, 0.4);
+   -moz-box-shadow:   3px 1px 5px 2px rgba(50, 50, 50, 0.4);
+   box-shadow:         3px 1px 5px 2px rgba(50, 50, 50, 0.4);
+
+}
+.bike_point:after {
+	content: "";
+	width: 26px;
+	height: 26px;
+	margin: 2px 0px 0px 2px;
+	background: white;
+	border: 1px solid #00caff;
+	position: absolute;
+	border-radius: 50%;
+	background-image: url('http://www.wpclipart.com/recreation/cycling/bicycles/plain_bicycle_icon_large.png');
+	background-size: 90%;
+	background-repeat: no-repeat;
+	-webkit-transition: rotate(-45deg);
+	-webkit-transform: rotate(45deg);
+	background-position: 1px 5px;
+}

@@ -1,0 +1,18 @@
+<h1>Chat window</h1>
+
+<div class="chat-container">
+  <ul id="chat">
+    <%= render @messages %>
+  </ul>
+
+  <%= form_for [@topic, Message.new], remote: true do |f| %>
+      <%= f.text_field :body %>
+      <%= f.hidden_field :topic_id, value: @topic.id %>
+      <%= f.hidden_field :user_id, value: current_user.try(:id) %>
+      <%= f.submit "Send" %>
+  <% end %>
+</div>
+
+<script>
+  callUpdate(<%= @topic.id %>)
+</script>

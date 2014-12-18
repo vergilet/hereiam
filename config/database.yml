@@ -1,0 +1,15 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: hereiam_dev
+  pool: 5
+  username: root
+  password: 6637515
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: hereiam_prod
+  pool: 5
+  username: root
+  password: 6637515
