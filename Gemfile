@@ -11,7 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'high_voltage'
-gem 'mysql2'
+gem 'pg'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'therubyracer', :platform=>:ruby
