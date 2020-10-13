@@ -16,7 +16,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
-gem 'geocoder'
+gem "geocoder", ">= 1.6.1"
 gem 'gmaps4rails'
 group :development do
   gem 'better_errors'
